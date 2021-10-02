@@ -9,3 +9,4 @@ signal tap_cooldown_end()
 
 signal next_level
 signal retry_level
+signal load_level(index)

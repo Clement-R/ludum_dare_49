@@ -42,7 +42,7 @@ func _get_next_level_path() -> String:
 		var index = _levels.find(_current_level)
 		if index + 1 < len(_levels):
 			_current_level = _levels[index + 1]
-			_current_level_index = index
+			_current_level_index = index + 1
 			save_score()
 		else:
 			emit_signal("last_level_finished")
@@ -80,7 +80,7 @@ func get_highest_level_completed() -> int:
 func save_score():
 	var file = File.new()
 	file.open(score_file, File.WRITE)
-	file.store_var(_current_level_index + 1)
+	file.store_var(_current_level_index)
 	file.close()
 	
 func _reset_score():
@@ -92,3 +92,4 @@ func _spawn_level(level_path: String) -> void:
 	add_child(level_instance)
 	level_instance.position = Vector2.ZERO
 	_current_level_instance = level_instance
+	Events.emit_signal("load_level", _current_level_index)

@@ -9,7 +9,6 @@ func _ready() -> void:
 	
 	var levels = LevelsManager.get_all_levels()
 	var highest = LevelsManager.get_highest_level_completed()
-	highest += 1
 
 	var index = 0
 	for level in levels:
@@ -21,6 +20,6 @@ func _ready() -> void:
 		if index == 0:
 			button_instance.locked = false
 		else:
-			button_instance.locked = highest <= index;
+			button_instance.locked = highest < index;
 
 		index += 1

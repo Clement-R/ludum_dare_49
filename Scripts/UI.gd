@@ -7,13 +7,16 @@ var _lose
 
 var _next_level_button
 var _retry_button
+var _level_index
 
 func _ready() -> void:
 	Events.connect("tap_cooldown", self, "_on_tap_cooldown")
 	Events.connect("tap_cooldown_end", self, "_on_tap_cooldown_end")
 	Events.connect("win", self, "_on_win")
 	Events.connect("lose", self, "_on_lose")
+	Events.connect("load_level", self, "_on_load_level")
 	
+	_level_index = $Levelndex
 	_texture_progress = $TapCooldown
 	_victory = $Victory
 	_lose = $Lose
@@ -40,3 +43,6 @@ func _on_NextLevel_pressed() -> void:
 func _on_Retry_pressed() -> void:
 	Events.emit_signal("retry_level")
 	_lose.visible = false
+
+func _on_load_level(level_index: int) -> void:
+	_level_index.text = str(level_index + 1)
