@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Controls.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Trophy.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Trophy.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 90 )
@@ -41,7 +41,7 @@ one_shot = true
 position = Vector2( 139.868, 1077.95 )
 collision_mask = 6
 can_sleep = false
-script = ExtResource( 6 )
+script = ExtResource( 2 )
 _left_fallen_nodes_paths = [ NodePath("FallenLeft_1"), NodePath("FallenLeft_2") ]
 _right_fallen_nodes_paths = [ NodePath("FallenRight_1"), NodePath("FallenRight_2") ]
 

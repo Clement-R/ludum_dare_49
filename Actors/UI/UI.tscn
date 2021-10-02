@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://Art/Sprites/circle_128.png" type="Texture" id=2]
-[ext_resource path="res://theme.tres" type="Theme" id=3]
-[ext_resource path="res://font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Config/theme.tres" type="Theme" id=3]
+[ext_resource path="res://Config/font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Art/Fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]

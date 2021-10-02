@@ -4,7 +4,6 @@ var _tap_timer: Timer
 
 func _ready() -> void:
 	_tap_timer = $TapCooldown
-	print("be ready")
 
 func _process(delta: float) -> void:
 	if not _tap_timer.is_stopped():
@@ -31,7 +30,6 @@ func destroy_at_position(spawn_global_position):
 	for result in results:
 		if(result.collider.name in ["Ground", "Trophy"]):
 			continue
-		print(result.collider.name)
 		result.collider.queue_free()
 		
 		_tap_timer.start()

@@ -15,13 +15,9 @@ func _ready() -> void:
 	Events.connect("retry_level", self, "_reload_level")
 	
 	var highest = get_highest_level_completed()
-	print("Highest :", highest)
 
 # DEBUG TO REMOVE
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_up"):
-		_load_next_level()
-	
 	if Input.is_action_just_pressed("ui_down"):
 		_reset_score()
 
@@ -40,8 +36,8 @@ func _get_next_level_path() -> String:
 		return ""
 	
 	if _current_level == null:
-		print("null")
 		_current_level = _levels[0]
+		_current_level_index = 0
 	else:
 		var index = _levels.find(_current_level)
 		if index + 1 < len(_levels):
@@ -49,12 +45,19 @@ func _get_next_level_path() -> String:
 			_current_level_index = index
 			save_score()
 		else:
-			print("Last level finished")
 			emit_signal("last_level_finished")
 			return ""
 
-	print("Next level: ", _current_level.resource_path)
 	return _current_level.resource_path
+
+func load_level(level: PackedScene) -> void:
+	var index = _levels.find(level)
+	if index == -1:
+		return
+		
+	_current_level = level
+	_current_level_index = index
+	_spawn_level(level.resource_path)
 	
 func _load_next_level() -> void:
 	var level_path = _get_next_level_path()
