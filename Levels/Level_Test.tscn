@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Actors/box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Art/Sprites/circle.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Controls.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.5, 30 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 128.0
+
+[node name="Level_Test" type="Node2D"]
+
+[node name="Controls" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Ground" type="KinematicBody2D" parent="."]
+position = Vector2( 187, 667 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground"]
+position = Vector2( -187, -75 )
+scale = Vector2( 0.999306, 1.01995 )
+polygon = PoolVector2Array( 0, 0, 375, 0, 375, 150, 0, 150 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2( -187, -75 )
+scale = Vector2( 0.999306, 1.01995 )
+polygon = PoolVector2Array( 0, 0, 375, 0, 375, 150, 0, 150 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Box" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112.172, 565.88 )
+
+[node name="Box2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 163.763, 565.483 )
+
+[node name="Box3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 215.75, 565.88 )
+
+[node name="Box4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 267.737, 565.483 )
+
+[node name="Box5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 243.926, 515.083 )
+
+[node name="Box6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 496.055, 573.56 )
+
+[node name="Box7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 136.38, 513.892 )
+
+[node name="Box8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160.588, 461.905 )
+
+[node name="Box9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 217.734, 461.508 )
+
+[node name="Trophy" type="RigidBody2D" parent="."]
+position = Vector2( 190.346, 405.868 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trophy"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="Trophy"]
+position = Vector2( -12.5, -30 )
+polygon = PoolVector2Array( 0, 0, 25, 0, 25, 60, 0, 60 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 188.042, 514.177 )
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 2 )

@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="Node2D4" type="RigidBody2D"]
+position = Vector2( 197.882, 488.622 )
+continuous_cd = 2
+can_sleep = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -25, -25 )
+polygon = PoolVector2Array( 0, 0, 50, 0, 50, 50, 0, 50 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -25, -25 )
+color = Color( 0, 1, 0.180392, 1 )
+polygon = PoolVector2Array( 0, 0, 50, 0, 50, 50, 0, 50 )
