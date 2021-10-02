@@ -14,6 +14,10 @@ config/name="LD_49"
 run/main_scene="res://Levels/Level_Test.tscn"
 config/icon="res://Art/Sprites/icon.png"
 
+[autoload]
+
+Events="*res://Scripts/Events.gd"
+
 [display]
 
 window/size/width=375

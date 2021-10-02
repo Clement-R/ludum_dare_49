@@ -1,10 +1,5 @@
 extends RigidBody2D
 
-
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
-
 export (Array, NodePath) var _left_fallen_nodes_paths
 export (Array, NodePath) var _right_fallen_nodes_paths
 
@@ -46,9 +41,8 @@ func _physics_process(delta: float) -> void:
 	if _timer.is_stopped() and _in_zone and is_stable():
 		_timer.start()
 	
-	#TODO: send signal
 	if is_fallen():
-		print("lose")
+		Events.emit_signal("lose")
 		breakpoint
 
 func is_fallen() -> bool:
@@ -63,7 +57,6 @@ func is_fallen() -> bool:
 	return false
 
 func is_stable() -> bool:
-	print(linear_velocity)
 	var is_moving = linear_velocity.x > 0.01 or linear_velocity.x < -0.01 or linear_velocity.y > 0.01 or linear_velocity.y < -0.01
 	return _bot_left.is_colliding() and _bot_right.is_colliding() and not is_moving
 
@@ -74,6 +67,5 @@ func _on_TrophyZone_body_exited(body: Node) -> void:
 	_in_zone = false
 
 func _on_StableTimer_timeout() -> void:
-	#TODO: send signal
-	print("win")
+	Events.emit_signal("win")
 	breakpoint
