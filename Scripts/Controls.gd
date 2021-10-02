@@ -1,7 +1,20 @@
 extends Node2D
 
+var _tap_timer: Timer
+
+func _ready() -> void:
+	_tap_timer = $TapCooldown
+	print("be ready")
+
+func _process(delta: float) -> void:
+	if not _tap_timer.is_stopped():
+		Events.emit_signal("tap_cooldown", _tap_timer.time_left / _tap_timer.wait_time)
+
 func _unhandled_input(event):
 	if event.is_echo():
+		return
+	
+	if not _tap_timer.is_stopped():
 		return
 
 	if event is InputEventMouseButton and event.is_pressed():
@@ -20,4 +33,9 @@ func destroy_at_position(spawn_global_position):
 			continue
 		print(result.collider.name)
 		result.collider.queue_free()
+		
+		_tap_timer.start()
 		Events.emit_signal("tap")
+
+func _on_TapCooldown_timeout() -> void:
+	Events.emit_signal("tap_cooldown_end")
