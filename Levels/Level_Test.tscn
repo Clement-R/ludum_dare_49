@@ -11,7 +11,7 @@ extents = Vector2( 12.5, 30 )
 [sub_resource type="CircleShape2D" id=2]
 radius = 128.0
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 67.8785, 10 )
 
 [node name="Level_Test" type="Node2D"]
@@ -176,7 +176,7 @@ position = Vector2( 186, 600.5 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrophyZone"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [connection signal="timeout" from="Trophy/StableTimer" to="Trophy" method="_on_StableTimer_timeout"]
 [connection signal="body_entered" from="TrophyZone" to="Trophy" method="_on_TrophyZone_body_entered"]

@@ -16,5 +16,7 @@ func destroy_at_position(spawn_global_position):
 	var space_state = get_world_2d().direct_space_state
 	var results = space_state.intersect_point(spawn_global_position)
 	for result in results:
+		if(result.collider.name in ["Ground", "Trophy"]):
+			continue
 		print(result.collider.name)
 		result.collider.queue_free()
