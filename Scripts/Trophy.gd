@@ -41,9 +41,6 @@ func _ready() -> void:
 
 func _process(delta):
 	update()
-	
-	if Input.is_key_pressed(KEY_E):
-		get_tree().reload_current_scene()
 
 func _physics_process(delta: float) -> void:
 	if _timer.is_stopped() and _in_zone and is_stable():
