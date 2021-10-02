@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Trophy.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.5, 30 )
+extents = Vector2( 50, 90 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 67.8785, 10 )
@@ -12,19 +12,20 @@ extents = Vector2( 67.8785, 10 )
 [node name="Level_base" type="Node2D"]
 
 [node name="Ground" type="KinematicBody2D" parent="."]
-position = Vector2( 187, 667 )
+position = Vector2( 375, 1443.02 )
 collision_layer = 4
 collision_mask = 5
 
 [node name="Polygon2D" type="Polygon2D" parent="Ground"]
-position = Vector2( -187, -75 )
-scale = Vector2( 0.999306, 1.01995 )
-polygon = PoolVector2Array( 0, 0, 375, 0, 375, 150, 0, 150 )
+position = Vector2( -375, -150 )
+polygon = PoolVector2Array( 0, 0, 750, 0, 750, 300, 0, 300 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-position = Vector2( -187, -75 )
-scale = Vector2( 0.999306, 1.01995 )
-polygon = PoolVector2Array( 0, 0, 375, 0, 375, 150, 0, 150 )
+position = Vector2( -375, -150 )
+polygon = PoolVector2Array( 0, 0, 750, 0, 750, 300, 0, 300 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -37,8 +38,9 @@ wait_time = 0.25
 one_shot = true
 
 [node name="Trophy" type="RigidBody2D" parent="."]
-position = Vector2( 186.141, 510.56 )
+position = Vector2( 139.868, 1077.95 )
 collision_mask = 6
+can_sleep = false
 script = ExtResource( 6 )
 _left_fallen_nodes_paths = [ NodePath("FallenLeft_1"), NodePath("FallenLeft_2") ]
 _right_fallen_nodes_paths = [ NodePath("FallenRight_1"), NodePath("FallenRight_2") ]
@@ -46,25 +48,22 @@ _right_fallen_nodes_paths = [ NodePath("FallenRight_1"), NodePath("FallenRight_2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trophy"]
 shape = SubResource( 1 )
 __meta__ = {
-"_edit_lock_": true
+"_editor_description_": ""
 }
 
 [node name="Polygon2D" type="Polygon2D" parent="Trophy"]
-position = Vector2( -12.5, -30 )
-polygon = PoolVector2Array( 0, 0, 25, 0, 25, 60, 0, 60 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( -50, -90 )
+polygon = PoolVector2Array( 0, 0, 100, 0, 100, 180, 0, 180 )
 
 [node name="BotLeft" type="RayCast2D" parent="Trophy"]
-position = Vector2( -12.5, 30 )
+position = Vector2( -50.0004, 90.0013 )
 enabled = true
 cast_to = Vector2( 0, 0.001 )
 collision_mask = 2
 collide_with_areas = true
 
 [node name="BotRight" type="RayCast2D" parent="Trophy"]
-position = Vector2( 12.5, 30 )
+position = Vector2( 49.9996, 90.0013 )
 enabled = true
 cast_to = Vector2( 0, 0.001 )
 collision_mask = 2
@@ -74,7 +73,7 @@ __meta__ = {
 }
 
 [node name="FallenLeft_1" type="RayCast2D" parent="Trophy"]
-position = Vector2( -12.5, -16 )
+position = Vector2( -50.0004, -49.9987 )
 enabled = true
 cast_to = Vector2( -10, 0 )
 collision_mask = 4
@@ -83,7 +82,7 @@ __meta__ = {
 }
 
 [node name="FallenLeft_2" type="RayCast2D" parent="Trophy"]
-position = Vector2( -12.5, 0 )
+position = Vector2( -50.0004, 10.0013 )
 enabled = true
 cast_to = Vector2( -10, 0 )
 collision_mask = 4
@@ -92,7 +91,7 @@ __meta__ = {
 }
 
 [node name="FallenRight_1" type="RayCast2D" parent="Trophy"]
-position = Vector2( 12.5, -16 )
+position = Vector2( 49.9996, -49.9987 )
 enabled = true
 cast_to = Vector2( 10, 0 )
 collision_mask = 4
@@ -101,7 +100,7 @@ __meta__ = {
 }
 
 [node name="FallenRight_2" type="RayCast2D" parent="Trophy"]
-position = Vector2( 12.5, 0 )
+position = Vector2( 49.9996, 10.0013 )
 enabled = true
 cast_to = Vector2( 10, 0 )
 collision_mask = 4
@@ -113,7 +112,7 @@ __meta__ = {
 one_shot = true
 
 [node name="TrophyZone" type="Area2D" parent="."]
-position = Vector2( 186, 600.5 )
+position = Vector2( 374, 1301.07 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrophyZone"]

@@ -9,18 +9,21 @@ radius = 128.0
 
 [node name="Level_1" instance=ExtResource( 3 )]
 
+[node name="Trophy" parent="." index="2"]
+position = Vector2( 373.34, 1149.78 )
+
 [node name="Box8" parent="." index="4" instance=ExtResource( 1 )]
-position = Vector2( 156.383, 566.597 )
+position = Vector2( 347.202, 1267.01 )
 collision_layer = 4
 collision_mask = 5
 
 [node name="Box9" parent="." index="5" instance=ExtResource( 1 )]
-position = Vector2( 213.529, 566.2 )
+position = Vector2( 404.348, 1266.62 )
 collision_layer = 4
 collision_mask = 5
 
 [node name="Circle" type="RigidBody2D" parent="." index="6"]
-position = Vector2( 59.8464, 564.502 )
+position = Vector2( 522.301, 1260.43 )
 collision_layer = 4
 collision_mask = 5
 

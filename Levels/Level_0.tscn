@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Actors/box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/Sprites/circle.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Level_base.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.5, 30 )
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 67.8785, 10 )
 
 [sub_resource type="CircleShape2D" id=3]
@@ -16,29 +13,23 @@ radius = 128.0
 [node name="Level_0" instance=ExtResource( 3 )]
 
 [node name="Trophy" parent="." index="2"]
-visible = true
-
-[node name="CollisionShape2D" parent="Trophy" index="0"]
-shape = SubResource( 1 )
-
-[node name="TrophyZone" parent="." index="3"]
-visible = true
+position = Vector2( 371.108, 1149.37 )
 
 [node name="CollisionShape2D" parent="TrophyZone" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="Box8" parent="." index="4" instance=ExtResource( 1 )]
-position = Vector2( 156.383, 566.597 )
+position = Vector2( 342.524, 1267.48 )
 collision_layer = 4
 collision_mask = 5
 
 [node name="Box9" parent="." index="5" instance=ExtResource( 1 )]
-position = Vector2( 213.529, 566.2 )
+position = Vector2( 399.67, 1267.08 )
 collision_layer = 4
 collision_mask = 5
 
 [node name="Circle" type="RigidBody2D" parent="." index="6"]
-position = Vector2( 344.312, 562.913 )
+position = Vector2( 135.842, 1254.25 )
 collision_layer = 4
 collision_mask = 5
 

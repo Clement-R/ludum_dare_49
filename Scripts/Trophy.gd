@@ -43,7 +43,6 @@ func _physics_process(delta: float) -> void:
 	
 	if is_fallen():
 		Events.emit_signal("lose")
-		breakpoint
 
 func is_fallen() -> bool:
 	for raycast in _left_fallen_raycasts:
@@ -68,4 +67,3 @@ func _on_TrophyZone_body_exited(body: Node) -> void:
 
 func _on_StableTimer_timeout() -> void:
 	Events.emit_signal("win")
-	breakpoint
