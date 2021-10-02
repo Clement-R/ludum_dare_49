@@ -20,3 +20,4 @@ func destroy_at_position(spawn_global_position):
 			continue
 		print(result.collider.name)
 		result.collider.queue_free()
+		Events.emit_signal("tap")
