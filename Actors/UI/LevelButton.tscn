@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Config/theme.tres" type="Theme" id=1]
 [ext_resource path="res://Art/Fonts/Comfortaa/static/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/LevelButton.gd" type="Script" id=3]
-[ext_resource path="res://Art/Sprites/icon.png" type="Texture" id=4]
+[ext_resource path="res://Art/Sprites/lock.png" type="Texture" id=4]
+[ext_resource path="res://Art/Sprites/rounded_square.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -18,10 +19,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect2" type="TextureRect" parent="."]
+modulate = Color( 0.921569, 0.337255, 0.294118, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 1, 0.384314, 0.384314, 1 )
+texture = ExtResource( 5 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -45,16 +48,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Locked" type="ColorRect" parent="."]
+[node name="Locked" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.501961 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Locked"]
-modulate = Color( 1, 1, 1, 0.25098 )
+[node name="Locked" type="TextureRect" parent="Locked"]
+modulate = Color( 1, 0.419608, 0.592157, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="Locked"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 4 )
