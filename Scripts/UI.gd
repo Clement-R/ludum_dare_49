@@ -37,6 +37,10 @@ func _on_tap_cooldown_end() -> void:
 	_texture_progress.value = 0
 
 func _on_win() -> void:
+	# shouldn't happen but if trophy breaks but fall stable	
+	if _lose.visible:
+		return
+
 	if LevelsManager.current_is_last_level():
 		_last_level.visible = true
 	else:

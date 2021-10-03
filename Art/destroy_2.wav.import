@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/destroy_2.wav-90f72369d42ca5a1d0dedabc9e383a24.sample"
+
+[deps]
+
+source_file="res://Art/destroy_2.wav"
+dest_files=[ "res://.import/destroy_2.wav-90f72369d42ca5a1d0dedabc9e383a24.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

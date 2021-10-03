@@ -18,6 +18,7 @@ config/icon="res://Art/Sprites/icon.png"
 
 Events="*res://Scripts/Events.gd"
 LevelsManager="*res://Scenes/LevelsManager.tscn"
+AudioManager="*res://Scripts/AudioManager.gd"
 
 [display]
 

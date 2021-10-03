@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Art/Sprites/Export/game/Trophy.PNG" type="Texture" id=1]
+[ext_resource path="res://Scripts/Trophy.gd" type="Script" id=2]
+
+[node name="Trophy" type="RigidBody2D"]
+position = Vector2( 419.804, 764.901 )
+collision_mask = 4
+continuous_cd = 2
+can_sleep = false
+script = ExtResource( 2 )
+_left_fallen_nodes_paths = [ NodePath("FallenLeft_1"), NodePath("FallenLeft_2") ]
+_right_fallen_nodes_paths = [ NodePath("FallenRight_1"), NodePath("FallenRight_2") ]
+
+[node name="BotLeft" type="RayCast2D" parent="."]
+position = Vector2( -30, 47.5 )
+enabled = true
+cast_to = Vector2( 0, 0.001 )
+collision_mask = 2
+collide_with_areas = true
+
+[node name="BotRight" type="RayCast2D" parent="."]
+position = Vector2( 30, 47.5 )
+enabled = true
+cast_to = Vector2( 0, 0.001 )
+collision_mask = 2
+collide_with_areas = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FallenLeft_1" type="RayCast2D" parent="."]
+position = Vector2( -38, -40 )
+enabled = true
+cast_to = Vector2( -10, 0 )
+collision_mask = 4
+collide_with_areas = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FallenLeft_2" type="RayCast2D" parent="."]
+position = Vector2( -38, 10 )
+enabled = true
+cast_to = Vector2( -10, 0 )
+collision_mask = 4
+collide_with_areas = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FallenRight_1" type="RayCast2D" parent="."]
+position = Vector2( 38, -40 )
+enabled = true
+cast_to = Vector2( 10, 0 )
+collision_mask = 4
+collide_with_areas = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FallenRight_2" type="RayCast2D" parent="."]
+position = Vector2( 38, 10 )
+enabled = true
+cast_to = Vector2( 10, 0 )
+collision_mask = 4
+collide_with_areas = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="StableTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 22, -39.5, 30, -39.5, 30, -37.6, 38, -32.6, 38, -30.2, 39, -28.9, 39, -10.3, 33.1, -0.5, 30.4, -0.5, 20.9, 1.2, 16.3, 11.5, 14.7, 11.5, 7, 17.5, 7, 35.5, 32, 35.5, 32, 47.5, -32, 47.5, -32, 35.5, -7, 35.5, -7, 17.5, -17, 10.5, -17, 8, -20.3, 1.5, -28.9, 1.5, -39, -9.5, -39, -28.9, -33, -37.5, -30.4, -37.5, -22, -39.2, -22, -47.5, 22, -47.5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[connection signal="timeout" from="StableTimer" to="." method="_on_StableTimer_timeout"]

@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 
 func _reload_level() -> void:
 	if not _current_level_instance == null:
-		_current_level_instance.queue_free()
+		_current_level_instance.queue_free()	
 
 	_spawn_level(_current_level.resource_path)
 
