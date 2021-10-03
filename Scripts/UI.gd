@@ -64,3 +64,6 @@ func _on_load_level(level_index: int) -> void:
 func _on_MainMenu_pressed() -> void:
 	_last_level.visible = false
 	Events.emit_signal("go_to_main_menu")
+
+func _on_Restart_pressed() -> void:
+	Events.emit_signal("retry_level")

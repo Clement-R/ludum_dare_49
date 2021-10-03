@@ -43,6 +43,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Restart" type="Button" parent="."]
+margin_left = 53.4878
+margin_top = 25.3797
+margin_right = 277.488
+margin_bottom = 68.3797
+rect_pivot_offset = Vector2( 131, 46.832 )
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Background" type="Panel" parent="Restart"]
+modulate = Color( 0.94902, 0.65098, 0.368627, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="Label" parent="Restart"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 3 )
+text = "Restart"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Victory" type="Label" parent="."]
 visible = false
 anchor_left = 0.5
@@ -233,6 +269,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Victory/NextLevel" to="." method="_on_NextLevel_pressed"]
 [connection signal="pressed" from="LastLevel/MainMenu" to="." method="_on_MainMenu_pressed"]
 [connection signal="pressed" from="Lose/Retry" to="." method="_on_Retry_pressed"]

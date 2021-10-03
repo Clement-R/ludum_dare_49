@@ -1,34 +1,58 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Actors/box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Level_base.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Config/theme.tres" type="Theme" id=4]
 
 [node name="Level_2" instance=ExtResource( 3 )]
 
 [node name="Trophy" parent="." index="3"]
-position = Vector2( 375, 820 )
+position = Vector2( 375, 615 )
 
 [node name="Box8" parent="." index="5" instance=ExtResource( 1 )]
-position = Vector2( 325, 1115 )
-collision_layer = 4
-collision_mask = 5
+position = Vector2( 325, 1110 )
 
 [node name="Box9" parent="." index="6" instance=ExtResource( 1 )]
-position = Vector2( 425, 1115 )
-collision_layer = 4
-collision_mask = 5
+position = Vector2( 425, 1110 )
 
 [node name="Box11" parent="." index="7" instance=ExtResource( 1 )]
-position = Vector2( 325, 915 )
-collision_layer = 4
-collision_mask = 5
+position = Vector2( 325, 910 )
 
 [node name="Box12" parent="." index="8" instance=ExtResource( 1 )]
-position = Vector2( 425, 915 )
-collision_layer = 4
-collision_mask = 5
+position = Vector2( 425, 910 )
 
 [node name="Box10" parent="." index="9" instance=ExtResource( 1 )]
-position = Vector2( 375, 1015 )
-collision_layer = 4
-collision_mask = 5
+position = Vector2( 375, 1010 )
+
+[node name="Box13" parent="." index="10" instance=ExtResource( 1 )]
+position = Vector2( 325, 710 )
+
+[node name="Box14" parent="." index="11" instance=ExtResource( 1 )]
+position = Vector2( 425, 710 )
+
+[node name="Box15" parent="." index="12" instance=ExtResource( 1 )]
+position = Vector2( 375, 810 )
+
+[node name="Tutorial" type="Node" parent="." index="13"]
+
+[node name="Control" type="Control" parent="Tutorial" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial1" type="Label" parent="Tutorial/Control" index="0"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -347.0
+margin_bottom = -310.0
+theme = ExtResource( 4 )
+text = "Stuck? Press restart"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
