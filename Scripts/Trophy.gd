@@ -18,8 +18,10 @@ var _in_zone = false
 var _timer: Timer
 var _lose_timer: Timer
 
+var _win = false
+var _lose = false
+
 func _ready() -> void:
-	set_process(true)
 	_bot_left = $BotLeftZone
 	_bot_right = $BotRightZone
 	
@@ -53,8 +55,9 @@ func _physics_process(delta: float) -> void:
 	if _lose_timer.is_stopped() and not _in_zone and is_on_ground():
 		_lose_timer.start()
 	
-	if is_fallen():
+	if is_fallen() and not _lose:
 		Events.emit_signal("lose")
+		_lose = true
 
 func is_fallen() -> bool:
 	for raycast in _left_fallen_raycasts:
@@ -81,8 +84,13 @@ func _on_TrophyZone_body_exited(body: Node) -> void:
 	_in_zone = false
 
 func _on_StableTimer_timeout() -> void:
+	if _win:
+		return
+		
 	Events.emit_signal("win")
+	_win = true
 
 func _on_GroundTimer_timeout() -> void:
-	if not _in_zone and is_on_ground():
+	if not _in_zone and is_on_ground() and not _lose:
 		Events.emit_signal("lose")
+		_lose = true

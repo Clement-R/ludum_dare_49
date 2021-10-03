@@ -47,7 +47,7 @@ __meta__ = {
 }
 
 [node name="FallenLeft_1" type="RayCast2D" parent="."]
-position = Vector2( -38, -40 )
+position = Vector2( -24.6133, -39.8425 )
 enabled = true
 cast_to = Vector2( -10, 0 )
 collision_mask = 12
@@ -57,7 +57,7 @@ __meta__ = {
 }
 
 [node name="FallenLeft_2" type="RayCast2D" parent="."]
-position = Vector2( -38, 10 )
+position = Vector2( -24.6133, 10.1575 )
 enabled = true
 cast_to = Vector2( -10, 0 )
 collision_mask = 12
@@ -67,7 +67,7 @@ __meta__ = {
 }
 
 [node name="FallenRight_1" type="RayCast2D" parent="."]
-position = Vector2( 38, -40 )
+position = Vector2( 24.6133, -39.8425 )
 enabled = true
 cast_to = Vector2( 10, 0 )
 collision_mask = 12
@@ -77,7 +77,7 @@ __meta__ = {
 }
 
 [node name="FallenRight_2" type="RayCast2D" parent="."]
-position = Vector2( 38, 10 )
+position = Vector2( 24.6133, 10.1575 )
 enabled = true
 cast_to = Vector2( 10, 0 )
 collision_mask = 12

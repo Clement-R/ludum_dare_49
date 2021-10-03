@@ -1,5 +1,8 @@
 extends Control
 
+export (Resource) var _win_sound
+export (Resource) var _lose_sound
+
 var _texture_progress: TextureProgress
 
 var _victory
@@ -40,6 +43,11 @@ func _on_win() -> void:
 	# shouldn't happen but if trophy breaks but fall stable	
 	if _lose.visible:
 		return
+	
+	if _victory.visible or _last_level.visible:
+		return
+
+	AudioManager.play(_win_sound.resource_path)
 
 	if LevelsManager.current_is_last_level():
 		_last_level.visible = true
@@ -47,7 +55,11 @@ func _on_win() -> void:
 		_victory.visible = true
 
 func _on_lose() -> void:
+	if _lose.visible:
+		return
+
 	_lose.visible = true
+	AudioManager.play(_lose_sound.resource_path)
 
 func _on_NextLevel_pressed() -> void:
 	Events.emit_signal("next_level")
