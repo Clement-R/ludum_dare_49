@@ -2,8 +2,9 @@ extends Control
 
 export (PackedScene) var _selection_menu
 
-var _selection_menu_instance: Node
+var _selection_menu_instance_path: String
 var _next_level_label
+var _trophy: Control
 
 func _ready() -> void:
 	Events.connect("load_level", self, "_on_load_level")
@@ -17,10 +18,16 @@ func _ready() -> void:
 	var next_level = highest
 	_next_level_label = $Play/NextLevel
 	_next_level_label.text = "Level %s" % str(next_level)
+	
+	_trophy = $AnimationPlayer/Trophy
+
+func _process(delta: float) -> void:
+	_trophy.visible = _selection_menu_instance_path == "" or get_node(_selection_menu_instance_path) == null
 
 func _on_LevelSelection_pressed() -> void:
-	_selection_menu_instance = _selection_menu.instance()
-	add_child(_selection_menu_instance)
+	var selection_menu_instance = _selection_menu.instance()
+	add_child(selection_menu_instance)
+	_selection_menu_instance_path = selection_menu_instance.get_path()
 
 func _on_Play_pressed() -> void:
 	Events.emit_signal("next_level")
