@@ -16,7 +16,7 @@ func _ready() -> void:
 
 	var next_level = highest
 	_next_level_label = $Play/NextLevel
-	_next_level_label.text = "[Level %s]" % str(next_level)
+	_next_level_label.text = "Level %s" % str(next_level)
 
 func _on_LevelSelection_pressed() -> void:
 	_selection_menu_instance = _selection_menu.instance()

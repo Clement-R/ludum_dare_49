@@ -1,16 +1,10 @@
 extends Node
 
+export (PackedScene) var _main_menu
 
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var _main_menu_instance: Node
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+func _show_main_menu() -> void:
+	_main_menu_instance = _main_menu.instance()
+	add_child(_main_menu_instance)
