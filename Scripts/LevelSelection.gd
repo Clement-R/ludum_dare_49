@@ -5,6 +5,8 @@ export (PackedScene) var _level_button
 var _container
 
 func _ready() -> void:
+	Events.connect("load_level", self, "_on_load_level")
+	
 	_container = $ScrollContainer/CenterContainer/GridContainer
 	
 	var levels = LevelsManager.get_all_levels()
@@ -23,3 +25,9 @@ func _ready() -> void:
 			button_instance.locked = highest < index;
 
 		index += 1
+
+func _on_CloseButton_pressed() -> void:
+	queue_free()
+
+func _on_load_level(level_index: int) -> void:
+	queue_free()

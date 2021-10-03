@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/LevelSelection.gd" type="Script" id=1]
+[ext_resource path="res://Art/Sprites/icon.png" type="Texture" id=2]
 [ext_resource path="res://Actors/UI/LevelButton.tscn" type="PackedScene" id=3]
 
 [node name="LevelSelection" type="Control"]
@@ -13,12 +14,20 @@ __meta__ = {
 }
 _level_button = ExtResource( 3 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.333333, 0.47451, 0.745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 20.0
+margin_top = 125.0
 margin_bottom = -20.0
-mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
@@ -28,16 +37,36 @@ __meta__ = {
 
 [node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
 margin_right = 750.0
-mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer/CenterContainer"]
 margin_left = 50.0
 margin_right = 700.0
 rect_min_size = Vector2( 650, 0 )
-mouse_filter = 2
+mouse_filter = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/vseparation = 50
 custom_constants/hseparation = 50
 columns = 4
+
+[node name="CloseButton" type="ToolButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -116.837
+margin_top = 11.2246
+margin_right = -16.8368
+margin_bottom = 111.225
+rect_min_size = Vector2( 100, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CloseButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 2 )
+expand = true
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]

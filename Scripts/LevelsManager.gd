@@ -15,6 +15,9 @@ func _ready() -> void:
 	Events.connect("retry_level", self, "_reload_level")
 	
 	var highest = get_highest_level_completed()
+	if highest > 0:
+		print(highest)
+		_set_current_level(highest - 1)
 
 # DEBUG TO REMOVE
 func _process(delta: float) -> void:
@@ -29,6 +32,10 @@ func _reload_level() -> void:
 
 func get_all_levels() -> Array:
 	return _levels
+	
+func _set_current_level(level_index: int) -> void:
+	_current_level = _levels[level_index]
+	_current_level_index = level_index
 
 func _get_next_level_path() -> String:
 	if len(_levels) == 0:
