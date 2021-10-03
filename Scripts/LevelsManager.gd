@@ -4,7 +4,7 @@ export (Array, PackedScene) var _levels
 
 var _current_level = null
 var _current_level_index = 0
-var _current_level_instance = null
+var _current_level_instance: Node2D = null
 
 var score_file = "user://score.save"
 
@@ -27,9 +27,10 @@ func _process(delta: float) -> void:
 		_reset_score()
 
 func _reload_level() -> void:
-	if not _current_level_instance == null:
-		_current_level_instance.queue_free()	
+	if not _current_level_instance == null and is_instance_valid(_current_level_instance):
+		_current_level_instance.queue_free()
 
+	yield(get_tree(), "idle_frame")
 	_spawn_level(_current_level.resource_path)
 
 func get_all_levels() -> Array:
@@ -74,7 +75,7 @@ func _load_next_level() -> void:
 	_spawn_level(level_path)
 
 func _destroy_level_instance() -> void:
-	if not _current_level_instance == null:
+	if not _current_level_instance == null and is_instance_valid(_current_level_instance):
 		_current_level_instance.queue_free()
 
 func get_highest_level_completed() -> int:

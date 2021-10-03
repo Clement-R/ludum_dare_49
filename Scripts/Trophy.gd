@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	if _lose_timer.is_stopped() and not _in_zone and is_on_ground():
 		_lose_timer.start()
 	
-	if is_fallen() and not _lose:
+	if is_fallen() and not _lose and not _win:
 		Events.emit_signal("lose")
 		_lose = true
 
@@ -91,6 +91,6 @@ func _on_StableTimer_timeout() -> void:
 	_win = true
 
 func _on_GroundTimer_timeout() -> void:
-	if not _in_zone and is_on_ground() and not _lose:
+	if not _in_zone and is_on_ground() and not _lose and not _win:
 		Events.emit_signal("lose")
 		_lose = true
