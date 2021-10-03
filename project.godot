@@ -42,9 +42,11 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_1="trophy"
 2d_physics/layer_2="trophy_zone"
 2d_physics/layer_3="world"
+2d_physics/layer_4="ground"
 
 [physics]
 
+common/physics_fps=120
 common/enable_pause_aware_picking=true
 2d/default_gravity=600
 
