@@ -7,12 +7,13 @@
 
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
+_main_menu = ExtResource( 3 )
 
 [node name="UI" parent="." instance=ExtResource( 6 )]
 mouse_filter = 2
 
 [node name="MainMenu" parent="." instance=ExtResource( 3 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="ThemePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 autoplay = true

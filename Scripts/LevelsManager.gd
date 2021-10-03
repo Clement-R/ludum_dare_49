@@ -2,8 +2,6 @@ extends Node
 
 export (Array, PackedScene) var _levels
 
-signal last_level_finished
-
 var _current_level = null
 var _current_level_index = 0
 var _current_level_instance = null
@@ -13,11 +11,15 @@ var score_file = "user://score.save"
 func _ready() -> void:
 	Events.connect("next_level", self, "_load_next_level")
 	Events.connect("retry_level", self, "_reload_level")
+	Events.connect("go_to_main_menu", self, "_destroy_level_instance")
 	
 	var highest = get_highest_level_completed()
 	if highest > 0:
 		print(highest)
 		_set_current_level(highest - 1)
+
+func current_is_last_level() -> bool:
+	return _current_level_index == len(_levels) - 1
 
 # DEBUG TO REMOVE
 func _process(delta: float) -> void:
@@ -51,9 +53,6 @@ func _get_next_level_path() -> String:
 			_current_level = _levels[index + 1]
 			_current_level_index = index + 1
 			save_score()
-		else:
-			emit_signal("last_level_finished")
-			return ""
 
 	return _current_level.resource_path
 
@@ -71,10 +70,12 @@ func _load_next_level() -> void:
 	if level_path == "":
 		return
 		
+	_destroy_level_instance()
+	_spawn_level(level_path)
+
+func _destroy_level_instance() -> void:
 	if not _current_level_instance == null:
 		_current_level_instance.queue_free()
-
-	_spawn_level(level_path)
 
 func get_highest_level_completed() -> int:
 	var file = File.new()

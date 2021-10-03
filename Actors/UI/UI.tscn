@@ -98,6 +98,62 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LastLevel" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -375.0
+margin_top = -109.158
+margin_right = 375.0
+margin_bottom = 37.8424
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+text = "Last level completed
+congrats!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Button" parent="LastLevel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = 93.0183
+margin_right = 112.0
+margin_bottom = 174.018
+rect_pivot_offset = Vector2( 131, 46.832 )
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="LastLevel/MainMenu"]
+modulate = Color( 0.301961, 0.65098, 1, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 2 )
+
+[node name="Next Level" type="Label" parent="LastLevel/MainMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 3 )
+text = "Main menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Lose" type="Label" parent="."]
 visible = false
 anchor_left = 0.5
@@ -139,6 +195,7 @@ __meta__ = {
 modulate = Color( 0.301961, 0.65098, 1, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 custom_styles/panel = SubResource( 2 )
 
 [node name="Retry" type="Label" parent="Lose/Retry"]
@@ -177,4 +234,5 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="Victory/NextLevel" to="." method="_on_NextLevel_pressed"]
+[connection signal="pressed" from="LastLevel/MainMenu" to="." method="_on_MainMenu_pressed"]
 [connection signal="pressed" from="Lose/Retry" to="." method="_on_Retry_pressed"]

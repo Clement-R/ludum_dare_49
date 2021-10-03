@@ -4,6 +4,7 @@ var _texture_progress: TextureProgress
 
 var _victory
 var _lose
+var _last_level
 
 var _next_level_button
 var _retry_button
@@ -22,6 +23,7 @@ func _ready() -> void:
 	_texture_progress = $TapCooldown
 	_victory = $Victory
 	_lose = $Lose
+	_last_level = $LastLevel
 	_victory.visible = false
 	_lose.visible = false
 	_on_tap_cooldown_end()
@@ -35,7 +37,10 @@ func _on_tap_cooldown_end() -> void:
 	_texture_progress.value = 0
 
 func _on_win() -> void:
-	_victory.visible = true
+	if LevelsManager.current_is_last_level():
+		_last_level.visible = true
+	else:
+		_victory.visible = true
 
 func _on_lose() -> void:
 	_lose.visible = true
@@ -51,3 +56,7 @@ func _on_Retry_pressed() -> void:
 func _on_load_level(level_index: int) -> void:
 	_level_label.visible = true
 	_level_index.text = str(level_index + 1)
+
+func _on_MainMenu_pressed() -> void:
+	_last_level.visible = false
+	Events.emit_signal("go_to_main_menu")
