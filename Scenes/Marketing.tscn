@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Config/main_menu_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Art/Sprites/Export/game/Box.PNG" type="Texture" id=2]
+[ext_resource path="res://Art/Sprites/Export/game/Trophy.PNG" type="Texture" id=3]
+[ext_resource path="res://Art/Sprites/Export/game/small_box.png" type="Texture" id=4]
+[ext_resource path="res://Config/theme.tres" type="Theme" id=5]
+[ext_resource path="res://Art/Sprites/Export/game/round_box.png" type="Texture" id=6]
+[ext_resource path="res://Art/Sprites/Export/game/large_box.png" type="Texture" id=7]
+
+[node name="Node" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_rotation = 0.012823
+color = Color( 0.294118, 0.356863, 0.670588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trophy" type="TextureRect" parent="Control"]
+margin_left = 576.204
+margin_top = 171.261
+margin_right = 654.204
+margin_bottom = 266.261
+rect_rotation = 19.4965
+rect_pivot_offset = Vector2( 39, 95 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -183.591
+margin_top = 127.564
+margin_right = 264.409
+margin_bottom = 338.564
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 1 )
+text = "Keep it
+standing"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="small_box" type="Sprite" parent="Control"]
+position = Vector2( 65.1539, 302.103 )
+rotation = 0.000223804
+texture = ExtResource( 4 )
+
+[node name="Box" type="Sprite" parent="Control"]
+position = Vector2( 140.887, 276.758 )
+rotation = 0.000223804
+texture = ExtResource( 2 )
+
+[node name="Trophy" type="Sprite" parent="."]
+position = Vector2( 355, 1030 )
+texture = ExtResource( 3 )
+
+[node name="large_box" type="Sprite" parent="."]
+position = Vector2( 245, 1225 )
+texture = ExtResource( 7 )
+
+[node name="large_box2" type="Sprite" parent="."]
+position = Vector2( 355, 1125 )
+texture = ExtResource( 7 )
+
+[node name="small_box" type="Sprite" parent="."]
+position = Vector2( 170, 1150 )
+texture = ExtResource( 4 )
+
+[node name="round_box" type="Sprite" parent="."]
+position = Vector2( 405, 1225 )
+texture = ExtResource( 6 )

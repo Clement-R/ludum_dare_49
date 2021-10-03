@@ -47,9 +47,9 @@ __meta__ = {
 }
 
 [node name="FallenLeft_1" type="RayCast2D" parent="."]
-position = Vector2( -30, -40.315 )
+position = Vector2( -33, -40.315 )
 enabled = true
-cast_to = Vector2( -10, 0 )
+cast_to = Vector2( -5, 0 )
 collision_mask = 12
 collide_with_areas = true
 __meta__ = {
@@ -57,9 +57,19 @@ __meta__ = {
 }
 
 [node name="FallenLeft_2" type="RayCast2D" parent="."]
-position = Vector2( -30, 9.685 )
+position = Vector2( -33, 9.685 )
 enabled = true
-cast_to = Vector2( -10, 0 )
+cast_to = Vector2( -5, 0 )
+collision_mask = 12
+collide_with_areas = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FallenLeft_3" type="RayCast2D" parent="."]
+position = Vector2( -38, -18 )
+enabled = true
+cast_to = Vector2( -3, 0 )
 collision_mask = 12
 collide_with_areas = true
 __meta__ = {
@@ -67,9 +77,9 @@ __meta__ = {
 }
 
 [node name="FallenRight_1" type="RayCast2D" parent="."]
-position = Vector2( 30, -39.5275 )
+position = Vector2( 33, -39.5275 )
 enabled = true
-cast_to = Vector2( 10, 0 )
+cast_to = Vector2( 5, 0 )
 collision_mask = 12
 collide_with_areas = true
 __meta__ = {
@@ -77,9 +87,19 @@ __meta__ = {
 }
 
 [node name="FallenRight_2" type="RayCast2D" parent="."]
-position = Vector2( 30, 10.4725 )
+position = Vector2( 33, 10.4725 )
 enabled = true
-cast_to = Vector2( 10, 0 )
+cast_to = Vector2( 5, 0 )
+collision_mask = 12
+collide_with_areas = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="FallenRight_3" type="RayCast2D" parent="."]
+position = Vector2( 38, -18 )
+enabled = true
+cast_to = Vector2( 3, 0 )
 collision_mask = 12
 collide_with_areas = true
 __meta__ = {

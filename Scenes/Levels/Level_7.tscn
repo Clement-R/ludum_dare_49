@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Actors/large_box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actors/small_box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Level_base.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Actors/round_box.tscn" type="PackedScene" id=5]
+
+[node name="Level_base" instance=ExtResource( 4 )]
+
+[node name="Background" parent="." index="0"]
+position = Vector2( 375, 665 )
+
+[node name="Trophy" parent="." index="3"]
+position = Vector2( 180, 670 )
+
+[node name="WallLeft" parent="." index="5"]
+position = Vector2( -100, 672 )
+
+[node name="SmallBox4" parent="." index="7" instance=ExtResource( 2 )]
+position = Vector2( 75, 990 )
+
+[node name="SmallBox7" parent="." index="8" instance=ExtResource( 2 )]
+position = Vector2( 75, 940 )
+
+[node name="SmallBox9" parent="." index="9" instance=ExtResource( 2 )]
+position = Vector2( 125, 940 )
+
+[node name="SmallBox10" parent="." index="10" instance=ExtResource( 2 )]
+position = Vector2( 25, 990 )
+
+[node name="SmallBox8" parent="." index="11" instance=ExtResource( 2 )]
+position = Vector2( 125, 990 )
+
+[node name="SmallBox5" parent="." index="12" instance=ExtResource( 2 )]
+position = Vector2( 75, 1040 )
+
+[node name="SmallBox13" parent="." index="13" instance=ExtResource( 2 )]
+position = Vector2( 25, 1040 )
+
+[node name="SmallBox14" parent="." index="14" instance=ExtResource( 2 )]
+position = Vector2( 125, 1040 )
+
+[node name="LargeBox2" parent="." index="15" instance=ExtResource( 1 )]
+position = Vector2( 175, 765 )
+
+[node name="LargeBox3" parent="." index="16" instance=ExtResource( 1 )]
+position = Vector2( 635, 1115 )
+
+[node name="Box4" parent="." index="17" instance=ExtResource( 3 )]
+position = Vector2( 635, 1015 )
+
+[node name="RoundBox" parent="." index="18" instance=ExtResource( 5 )]
+position = Vector2( 125, 865 )
+
+[node name="SmallBox11" parent="." index="19" instance=ExtResource( 2 )]
+position = Vector2( 210, 940 )
+
+[node name="SmallBox12" parent="." index="20" instance=ExtResource( 2 )]
+position = Vector2( 210, 990 )
+
+[node name="SmallBox15" parent="." index="21" instance=ExtResource( 2 )]
+position = Vector2( 210, 1040 )
+
+[node name="SmallBox16" parent="." index="22" instance=ExtResource( 2 )]
+position = Vector2( 260, 940 )
+
+[node name="SmallBox17" parent="." index="23" instance=ExtResource( 2 )]
+position = Vector2( 260, 990 )
+
+[node name="SmallBox18" parent="." index="24" instance=ExtResource( 2 )]
+position = Vector2( 260, 1040 )
+
+[node name="SmallBox6" parent="." index="25" instance=ExtResource( 2 )]
+position = Vector2( 75, 1090 )
+
+[node name="SmallBox19" parent="." index="26" instance=ExtResource( 2 )]
+position = Vector2( 25, 1090 )
+
+[node name="SmallBox20" parent="." index="27" instance=ExtResource( 2 )]
+position = Vector2( 125, 1090 )
+
+[node name="SmallBox21" parent="." index="28" instance=ExtResource( 2 )]
+position = Vector2( 210, 1090 )
+
+[node name="SmallBox22" parent="." index="29" instance=ExtResource( 2 )]
+position = Vector2( 260, 1090 )
+
+[node name="SmallBox23" parent="." index="30" instance=ExtResource( 2 )]
+position = Vector2( 75, 1140 )
+
+[node name="SmallBox24" parent="." index="31" instance=ExtResource( 2 )]
+position = Vector2( 25, 1140 )
+
+[node name="SmallBox25" parent="." index="32" instance=ExtResource( 2 )]
+position = Vector2( 125, 1140 )
+
+[node name="SmallBox26" parent="." index="33" instance=ExtResource( 2 )]
+position = Vector2( 210, 1140 )
+
+[node name="SmallBox27" parent="." index="34" instance=ExtResource( 2 )]
+position = Vector2( 260, 1140 )
+
+[node name="RoundBox2" parent="." index="35" instance=ExtResource( 5 )]
+position = Vector2( 230, 865 )
